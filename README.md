@@ -12,6 +12,13 @@ Modern static website for Evergreen AI Link, an AI automation agency focused on 
 - `contact.html` - quick contact form for Airtable leads.
 - `ai-system-plan.html` - advanced AI intake form for n8n, with optional embedded n8n form.
 
+## Included Brand Resources
+
+- `assets/evergreen-ai-link-logo-clean.png` - cropped transparent logo used across the site.
+- `assets/ai-automation-infographic.png` - AI-ready business foundation infographic.
+- `assets/ai-ready-enterprise-path.png` - path to AI-ready enterprise infographic.
+- `assets/resources/ai-ready-business-setup.pdf` - pricing and setup PDF linked from the Services page.
+
 ## Configuration
 
 Edit `site.config.js`:

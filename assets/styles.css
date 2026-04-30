@@ -269,6 +269,10 @@ section {
   gap: 18px;
 }
 
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -281,6 +285,72 @@ section {
   min-height: 272px;
   display: flex;
   flex-direction: column;
+}
+
+.price {
+  margin: 16px 0 0;
+  color: var(--forest);
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.feature-list {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+.visual-feature {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.visual-feature img,
+.resource-image {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.resource-image {
+  margin-top: 28px;
+}
+
+.package-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.package-card .button {
+  margin-top: auto;
+}
+
+.service-card .price {
+  font-size: 1.25rem;
 }
 
 .text-link {
@@ -524,6 +594,11 @@ textarea {
   }
 
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.two,
+  .visual-feature {
     grid-template-columns: 1fr;
   }
 

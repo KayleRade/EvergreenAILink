@@ -2,6 +2,30 @@ const config = window.EVERGREEN_CONFIG || {};
 
 const fallbackServices = [
   {
+    id: "starter-setup",
+    name: "Starter Setup",
+    summary: "A clean professional foundation for small businesses that need to be found, contacted, and booked.",
+    description: "Professional website setup, mobile-friendly layout, Google Maps / Business Profile support, contact form, booking page setup, Google Calendar connection, business email setup, basic SEO, Hostinger setup, and domain connection.",
+    outcome: "A simple online presence that looks credible and gives customers a clear path to contact or book.",
+    price: "$550"
+  },
+  {
+    id: "growth-setup",
+    name: "Growth Setup",
+    summary: "A stronger digital foundation for businesses ready to grow lead generation and service presentation.",
+    description: "Includes everything in Starter, plus more pages and sections, stronger service presentation, improved growth structure, advanced contact pathways, better booking flow, lead capture enhancements, improved SEO foundation, and additional setup support.",
+    outcome: "A more complete online presence with stronger lead flow and a better foundation for future automation.",
+    price: "$1,100"
+  },
+  {
+    id: "ai-agent-tool",
+    name: "Optional AI Agent or Tool",
+    summary: "Add AI-powered support once your digital foundation is ready.",
+    description: "AI Website Chat, Email Follow-Up, Appointment Assistant, Lead Qualifier, FAQ Assistant, or Workflow Automation.",
+    outcome: "Faster customer response, better qualification, and less repetitive work for your team.",
+    price: "$1,500 per Agent/Tool"
+  },
+  {
     id: "lead-response",
     name: "AI Lead Response System",
     summary: "Capture, qualify, and respond to new leads before competitors have opened their inbox.",
@@ -24,6 +48,30 @@ const fallbackServices = [
     description: "A practical CRM improvement system for tagging, scoring, follow-up sequencing, owner assignment, and AI-generated notes.",
     outcome: "A cleaner system your team can actually trust.",
     price: "Custom build"
+  },
+  {
+    id: "ai-receptionist",
+    name: "AI Receptionist",
+    summary: "Give callers and website visitors a faster first response with clear routing and handoff rules.",
+    description: "A customer-facing AI intake and routing system for common questions, appointment requests, basic qualification, and escalation to a human when needed.",
+    outcome: "Fewer missed opportunities and a calmer front desk experience.",
+    price: "$1,500 per Agent/Tool"
+  },
+  {
+    id: "appointment-assistant",
+    name: "Appointment Assistant",
+    summary: "Automate scheduling, reminders, rescheduling prompts, and calendar coordination.",
+    description: "Connect booking pages, calendars, email or SMS reminders, lead source tracking, and follow-up tasks so appointments are easier to capture and manage.",
+    outcome: "More booked calls with less manual coordination.",
+    price: "$1,500 per Agent/Tool"
+  },
+  {
+    id: "faq-assistant",
+    name: "FAQ Assistant",
+    summary: "Answer common questions automatically while still protecting the human handoff.",
+    description: "A trained FAQ and support assistant for services, pricing, policies, next steps, and simple customer guidance.",
+    outcome: "Faster answers and fewer repetitive support replies.",
+    price: "$1,500 per Agent/Tool"
   }
 ];
 
@@ -271,6 +319,7 @@ async function renderDynamicPages() {
       <p class="eyebrow">Request This Service</p>
       <h1>${service.name}</h1>
       <p class="lead">${service.summary}</p>
+      <p class="price">${service.price || "Custom build"}</p>
       <div class="detail-grid">
         <div><strong>What it does</strong><p>${service.description}</p></div>
         <div><strong>Expected outcome</strong><p>${service.outcome}</p></div>
