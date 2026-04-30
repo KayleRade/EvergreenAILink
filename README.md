@@ -45,6 +45,8 @@ For production, prefer `leadsWebhookUrl` or a secure proxy for Airtable writes s
 
 ## Airtable Fields
 
+For the full CMS structure, see `AIRTABLE_SCHEMA.md`.
+
 Services table:
 
 - `Name`

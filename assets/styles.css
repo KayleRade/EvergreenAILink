@@ -69,7 +69,7 @@ a {
 }
 
 .brand-logo {
-  width: 214px;
+  width: 107px;
   height: auto;
   object-fit: contain;
 }
@@ -149,7 +149,7 @@ button {
 }
 
 .hero-logo {
-  width: min(380px, 72vw);
+  width: min(190px, 50vw);
   height: auto;
   display: block;
   margin-bottom: 26px;
@@ -534,31 +534,81 @@ textarea {
 }
 
 .site-footer {
-  padding: 42px 0;
-  border-top: 1px solid var(--line);
-  background: #fbfdfb;
+  padding: 56px 0 24px;
+  background: #f8f4ef;
 }
 
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  color: var(--muted);
+.footer-card {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr 0.85fr 0.85fr;
+  gap: 42px;
+  border: 1px solid rgba(220, 233, 223, 0.7);
+  border-radius: 24px;
+  padding: 34px 36px;
+  background: var(--white);
+  box-shadow: 0 22px 58px rgba(11, 61, 46, 0.1);
 }
 
-.footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--forest);
-  font-weight: 800;
-}
-
-.footer-brand img {
-  width: 190px;
+.footer-logo {
+  width: 138px;
   height: auto;
-  object-fit: contain;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.footer-card h3 {
+  margin-bottom: 18px;
+  font-size: 1.45rem;
+}
+
+.footer-card p {
+  margin: 0;
+}
+
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 28px;
+}
+
+.footer-menu a,
+.footer-contact a {
+  color: #3f5f54;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--forest);
+  background: var(--white);
+  box-shadow: 0 12px 26px rgba(16, 34, 27, 0.06);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--muted);
 }
 
 @media (max-width: 860px) {
@@ -602,10 +652,13 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .cta-inner,
-  .footer-inner {
+  .cta-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-card {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -619,7 +672,16 @@ textarea {
   }
 
   .brand-logo {
-    width: 178px;
+    width: 94px;
+  }
+
+  .footer-card {
+    grid-template-columns: 1fr;
+    padding: 26px 22px;
+  }
+
+  .footer-menu {
+    grid-template-columns: 1fr;
   }
 
   .hero-actions,
