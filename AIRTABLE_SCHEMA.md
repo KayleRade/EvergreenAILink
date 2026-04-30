@@ -206,6 +206,7 @@ Optional FAQ section and AI assistant training source.
 | Question | Long text | FAQ question |
 | Answer | Long text | FAQ answer |
 | Category | Single select | Pricing, AI Setup, Website, Automation, Support |
+| Keywords | Long text | Search terms and alternate wording, separated by commas or spaces |
 | Related Service | Linked record | Optional |
 | Active | Checkbox | Show/hide |
 | Sort Order | Number | Display order |

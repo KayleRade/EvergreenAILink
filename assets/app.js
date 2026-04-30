@@ -95,6 +95,37 @@ const fallbackPosts = [
   }
 ];
 
+const fallbackFaqs = [
+  {
+    id: "starter-vs-growth",
+    question: "What is the difference between Starter Setup and Growth Setup?",
+    answer: "Starter Setup is for a clean professional presence with website, contact, booking, Google, email, SEO, hosting, and domain basics. Growth Setup adds more pages, stronger service presentation, advanced contact pathways, improved lead capture, and a stronger SEO foundation.",
+    category: "Pricing",
+    keywords: "starter growth setup pricing website booking seo lead capture"
+  },
+  {
+    id: "ai-system-plan",
+    question: "What happens after I submit the AI System Plan intake?",
+    answer: "Your answers help identify the strongest workflow opportunities, current tool gaps, and first automation to build. Evergreen AI Link reviews the intake and follows up with recommended next steps when there is a strong fit.",
+    category: "AI Setup",
+    keywords: "ai system plan intake workflow automation recommendation"
+  },
+  {
+    id: "foundation-first",
+    question: "Why do I need a digital foundation before AI automation?",
+    answer: "AI works best when your website, forms, booking, email, lead capture, and basic systems are already clear. Without that foundation, automation has nowhere reliable to send data or trigger next steps.",
+    category: "Automation",
+    keywords: "digital foundation systems before automation website forms booking"
+  },
+  {
+    id: "ai-tools",
+    question: "Which AI tools can be added later?",
+    answer: "Available AI tools include AI Website Chat, Email Follow-Up, Appointment Assistant, Lead Qualifier, FAQ Assistant, and Workflow Automation.",
+    category: "AI Setup",
+    keywords: "ai website chat email follow-up appointment assistant lead qualifier faq workflow"
+  }
+];
+
 const slugify = (value) =>
   String(value || "")
     .toLowerCase()
@@ -156,6 +187,27 @@ async function getPosts() {
     }));
   } catch {
     return fallbackPosts;
+  }
+}
+
+async function getFaqs() {
+  try {
+    const records = await fetchAirtable(config.airtable?.faqTable || "FAQ");
+    if (!records) return fallbackFaqs;
+    return records
+      .map((record) => ({
+        id: record.id,
+        question: field(record, "Question"),
+        answer: field(record, "Answer"),
+        category: field(record, "Category", "General"),
+        keywords: field(record, "Keywords"),
+        active: field(record, "Active", true),
+        sortOrder: field(record, "Sort Order", 0)
+      }))
+      .filter((faq) => faq.active !== false && faq.question && faq.answer)
+      .sort((a, b) => Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
+  } catch {
+    return fallbackFaqs;
   }
 }
 
@@ -310,10 +362,60 @@ function bindN8nForm() {
   });
 }
 
+function renderFaqs(container, faqs) {
+  if (!container) return;
+  container.innerHTML = faqs
+    .map((faq) => `
+      <article class="faq-item" data-faq-item data-search-text="${[faq.question, faq.answer, faq.category, faq.keywords].join(" ").toLowerCase()}">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>${faq.question}</span>
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="eyebrow">${faq.category || "General"}</p>
+          <p>${faq.answer}</p>
+        </div>
+      </article>
+    `)
+    .join("");
+
+  container.querySelectorAll(".faq-question").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest("[data-faq-item]");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      item.classList.toggle("is-open", !expanded);
+    });
+  });
+}
+
+function bindFaqSearch() {
+  const input = document.querySelector("[data-faq-search]");
+  const count = document.querySelector("[data-faq-count]");
+  if (!input) return;
+
+  const update = () => {
+    const terms = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    document.querySelectorAll("[data-faq-item]").forEach((item) => {
+      const haystack = item.dataset.searchText || "";
+      const match = terms.every((term) => haystack.includes(term));
+      item.hidden = !match;
+      if (match) visible += 1;
+    });
+    if (count) count.textContent = `${visible} answer${visible === 1 ? "" : "s"} found`;
+  };
+
+  input.addEventListener("input", update);
+  update();
+}
+
 async function renderDynamicPages() {
-  const [services, posts] = await Promise.all([getServices(), getPosts()]);
+  const [services, posts, faqs] = await Promise.all([getServices(), getPosts(), getFaqs()]);
   renderServices(document.querySelector("[data-services]"), services, Number(document.querySelector("[data-services]")?.dataset.limit || 0));
   renderPosts(document.querySelector("[data-posts]"), posts, Number(document.querySelector("[data-posts]")?.dataset.limit || 0));
+  renderFaqs(document.querySelector("[data-faqs]"), faqs);
+  bindFaqSearch();
 
   const serviceDetail = document.querySelector("[data-service-detail]");
   if (serviceDetail) {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact | Evergreen AI Link</title>
+    <title>FAQ | Evergreen AI Link</title>
     <link rel="icon" href="assets/evergreen-ai-link-logo-clean.png">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
@@ -19,25 +19,19 @@
     </header>
     <main>
       <section class="page-hero">
-        <div class="container form-shell">
-          <div>
-            <p class="eyebrow">Quick Contact</p>
-            <h1>Tell us what you want to improve.</h1>
-            <p class="lead">This short form is designed for Airtable leads. For a deeper workflow diagnosis, use the AI System Plan intake.</p>
-            <div class="section-actions">
-              <a class="button primary" data-booking-link href="https://calendar.app.google/6oECkQT9oewUMVHs8">Book a Call</a>
-              <a class="button secondary" href="ai-system-plan.html">Get My AI System Plan</a>
-            </div>
+        <div class="container">
+          <p class="eyebrow">FAQ</p>
+          <h1>Find answers about AI readiness, setup, and automation.</h1>
+          <p class="lead">Search by keyword to filter the FAQ library. This page is ready to pull live FAQ records from Airtable.</p>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="search-panel">
+            <label><span>Search FAQs</span><input data-faq-search type="search" placeholder="Try pricing, booking, AI chat, setup, workflow..."></label>
+            <p class="form-status" data-faq-count></p>
           </div>
-          <form class="card" data-contact-form>
-            <label><span>Name</span><input name="Name" autocomplete="name" required></label>
-            <label><span>Email</span><input type="email" name="Email" autocomplete="email" required></label>
-            <label><span>Company</span><input name="Company" autocomplete="organization"></label>
-            <label><span>What can we help with?</span><textarea name="Message" required></textarea></label>
-            <input type="hidden" name="Source" value="Website quick contact">
-            <button type="submit">Send Message</button>
-            <p class="form-status" data-form-status></p>
-          </form>
+          <div class="faq-list" data-faqs></div>
         </div>
       </section>
     </main>

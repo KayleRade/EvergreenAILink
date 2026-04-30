@@ -9,6 +9,7 @@ Modern static website for Evergreen AI Link, an AI automation agency focused on 
 - `service.html` - service detail and request form with selected service passed into the intake.
 - `blog.html` - dynamic blog listing.
 - `post.html` - blog detail with optional YouTube embed.
+- `faq.html` - searchable FAQ page powered by Airtable or local fallback answers.
 - `contact.html` - quick contact form for Airtable leads.
 - `ai-system-plan.html` - advanced AI intake form for n8n, with optional embedded n8n form.
 - `ai-ready-business-setup.html` - dedicated AI Ready Business Setup intake form.
@@ -37,6 +38,7 @@ window.EVERGREEN_CONFIG = {
     token: "pat...",
     servicesTable: "Services",
     blogTable: "Blog",
+    faqTable: "FAQ",
     leadsTable: "Leads",
     leadsWebhookUrl: "https://your-secure-lead-webhook"
   }
@@ -70,6 +72,15 @@ Blog table:
 - `Content`
 - `Featured Image` as an attachment, or `Featured Image URL` as a URL field
 - `YouTube URL`
+
+FAQ table:
+
+- `Question`
+- `Answer`
+- `Category`
+- `Keywords`
+- `Active`
+- `Sort Order`
 
 Leads table:
 

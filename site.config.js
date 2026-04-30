@@ -10,6 +10,7 @@ window.EVERGREEN_CONFIG = {
     token: "",
     servicesTable: "Services",
     blogTable: "Blog",
+    faqTable: "FAQ",
     leadsTable: "Leads",
     leadsWebhookUrl: ""
   }
