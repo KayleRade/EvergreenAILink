@@ -1,4 +1,5 @@
 const config = window.EVERGREEN_CONFIG || {};
+const BOOKING_URL = "https://calendar.app.google/6oECkQT9oewUMVHs8";
 
 const fallbackServices = [
   {
@@ -166,7 +167,7 @@ function youtubeEmbed(url) {
 
 function setBookingLinks() {
   document.querySelectorAll("[data-booking-link]").forEach((link) => {
-    link.href = config.bookingUrl || "#contact";
+    link.href = config.bookingUrl || BOOKING_URL;
   });
 }
 

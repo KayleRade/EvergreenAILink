@@ -465,6 +465,31 @@ section {
   background: linear-gradient(135deg, var(--mist), #ffffff);
 }
 
+.page-hero.intake-hero {
+  min-height: calc(100svh - 72px);
+  display: grid;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.intake-hero h1 {
+  font-size: clamp(2.15rem, 4vw, 3.35rem);
+}
+
+.intake-hero .lead {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.intake-hero .section-actions {
+  margin-top: 20px;
+}
+
+.intake-hero .form-shell {
+  align-items: center;
+}
+
 .form-shell {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -549,7 +574,8 @@ textarea {
 }
 
 .embed-frame.compact {
-  min-height: 680px;
+  height: min(600px, calc(100svh - 230px));
+  min-height: 460px;
 }
 
 .embed-actions {
