@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get My AI System Plan | Evergreen AI Link</title>
+    <link rel="icon" href="assets/evergreen-ai-link-logo.png">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/evergreen-ai-link-logo.png" alt="Evergreen AI Link logo"><span class="brand-wordmark"><span>Evergreen AI Link</span><small>AI automation</small></span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+          <a class="button primary" data-booking-link href="#">Book a Call</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container form-shell">
+          <div>
+            <p class="eyebrow">Advanced intake</p>
+            <h1>Get My AI System Plan</h1>
+            <p class="lead">Share the workflow, tools, bottlenecks, and goal. This can submit directly to n8n or display your embedded n8n form.</p>
+          </div>
+          <form class="card" data-n8n-form>
+            <input type="hidden" name="selected_service" data-selected-service>
+            <label><span>Name</span><input name="name" autocomplete="name" required></label>
+            <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label><span>Company</span><input name="company" autocomplete="organization"></label>
+            <label><span>Current tools</span><input name="current_tools" placeholder="Airtable, CRM, email, forms, calendar"></label>
+            <label><span>Biggest bottleneck</span><select name="bottleneck"><option>Missing calls</option><option>Manual repetitive work</option><option>Losing leads</option><option>Slow response times</option><option>Disorganized systems</option></select></label>
+            <label><span>Describe the workflow</span><textarea name="workflow" required></textarea></label>
+            <button type="submit">Get My AI System Plan</button>
+            <p class="form-status" data-form-status></p>
+          </form>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <iframe class="embed-frame" data-n8n-embed hidden title="AI System Plan intake"></iframe>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><span class="footer-brand"><img src="assets/evergreen-ai-link-logo.png" alt="">Evergreen AI Link</span><span>Connected through Airtable, n8n, and booking workflows.</span></div></footer>
+    <script src="site.config.js"></script><script src="assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Evergreen AI Link</title>
+    <link rel="icon" href="assets/evergreen-ai-link-logo.png">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/evergreen-ai-link-logo.png" alt="Evergreen AI Link logo"><span class="brand-wordmark"><span>Evergreen AI Link</span><small>AI automation</small></span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+          <a class="button primary" data-booking-link href="#">Book a Call</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container form-shell">
+          <div>
+            <p class="eyebrow">Quick Contact</p>
+            <h1>Tell us what you want to improve.</h1>
+            <p class="lead">This short form is designed for Airtable leads. For a deeper workflow diagnosis, use the AI System Plan intake.</p>
+            <div class="section-actions">
+              <a class="button primary" data-booking-link href="#">Book a Call</a>
+              <a class="button secondary" href="ai-system-plan.html">Get My AI System Plan</a>
+            </div>
+          </div>
+          <form class="card" data-contact-form>
+            <label><span>Name</span><input name="Name" autocomplete="name" required></label>
+            <label><span>Email</span><input type="email" name="Email" autocomplete="email" required></label>
+            <label><span>Company</span><input name="Company" autocomplete="organization"></label>
+            <label><span>What can we help with?</span><textarea name="Message" required></textarea></label>
+            <input type="hidden" name="Source" value="Website quick contact">
+            <button type="submit">Send Message</button>
+            <p class="form-status" data-form-status></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><span class="footer-brand"><img src="assets/evergreen-ai-link-logo.png" alt="">Evergreen AI Link</span><span>hello@evergreenailink.com</span></div></footer>
+    <script src="site.config.js"></script><script src="assets/app.js"></script>
+  </body>
+</html>
