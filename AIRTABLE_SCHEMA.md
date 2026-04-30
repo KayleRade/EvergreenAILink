@@ -15,7 +15,8 @@ One record for global settings.
 | Email | Email | Public contact email |
 | Phone | Phone number | Optional |
 | Booking URL | URL | Book a Call CTA |
-| n8n Intake URL | URL | Webhook or form URL |
+| n8n Intake URL | URL | AI Automation Intake / Get My AI System Plan form URL |
+| n8n Setup Intake URL | URL | AI Ready Business Setup Intake form URL |
 | Footer Description | Long text | Footer brand copy |
 | Copyright Text | Single line text | All rights reserved © 2026 Evergreen AI Link. |
 | Instagram URL | URL | Optional |

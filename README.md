@@ -11,6 +11,7 @@ Modern static website for Evergreen AI Link, an AI automation agency focused on 
 - `post.html` - blog detail with optional YouTube embed.
 - `contact.html` - quick contact form for Airtable leads.
 - `ai-system-plan.html` - advanced AI intake form for n8n, with optional embedded n8n form.
+- `ai-ready-business-setup.html` - dedicated AI Ready Business Setup intake form.
 
 ## Included Brand Resources
 
@@ -27,8 +28,9 @@ Edit `site.config.js`:
 window.EVERGREEN_CONFIG = {
   bookingUrl: "https://your-booking-link",
   n8n: {
-    intakeWebhookUrl: "https://your-n8n-webhook",
-    embedUrl: "https://your-n8n-form"
+    intakeWebhookUrl: "https://your-ai-automation-form-or-webhook",
+    embedUrl: "https://your-ai-automation-form",
+    setupEmbedUrl: "https://your-ai-ready-business-setup-form"
   },
   airtable: {
     baseId: "app...",
@@ -42,6 +44,12 @@ window.EVERGREEN_CONFIG = {
 ```
 
 For production, prefer `leadsWebhookUrl` or a secure proxy for Airtable writes so private Airtable tokens are not exposed in browser code.
+
+## Live Form Links
+
+- Book a Call: `https://calendar.app.google/6oECkQT9oewUMVHs8`
+- AI Automation Intake / Get My AI System Plan: `https://n8n.srv1218594.hstgr.cloud/form/92cda703-6db6-4c82-a7ca-d7d5d265ca79`
+- AI Ready Business Setup Intake: `https://n8n.srv1218594.hstgr.cloud/form/ac03bc11-416a-4ac5-a997-d47fdb1471c1`
 
 ## Airtable Fields
 

@@ -176,12 +176,15 @@ function renderServices(container, services, limit) {
   container.innerHTML = items
     .map((service) => {
       const slug = slugify(service.name || service.id);
+      const href = ["starter-setup", "growth-setup"].includes(slug)
+        ? `ai-ready-business-setup.html?service=${encodeURIComponent(slug)}`
+        : `service.html?service=${encodeURIComponent(slug)}`;
       return `
         <article class="card service-card">
           <p class="eyebrow">${service.price || "AI automation"}</p>
           <h3>${service.name}</h3>
           <p>${service.summary}</p>
-          <a class="text-link" href="service.html?service=${encodeURIComponent(slug)}">Request This Service</a>
+          <a class="text-link" href="${href}">Request This Service</a>
         </article>
       `;
     })
@@ -272,8 +275,11 @@ function bindN8nForm() {
     input.value = selectedService;
   });
 
-  if (frame && config.n8n?.embedUrl) {
-    frame.src = selectedService ? `${config.n8n.embedUrl}?service=${encodeURIComponent(selectedService)}` : config.n8n.embedUrl;
+  if (frame) {
+    const configuredUrl = frame.dataset.formUrl || config.n8n?.embedUrl;
+    if (configuredUrl) {
+      frame.src = selectedService ? `${configuredUrl}?service=${encodeURIComponent(selectedService)}` : configuredUrl;
+    }
     frame.hidden = false;
   }
 

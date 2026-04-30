@@ -527,10 +527,19 @@ textarea {
 
 .embed-frame {
   width: 100%;
-  min-height: 720px;
+  min-height: 820px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.embed-frame.compact {
+  min-height: 680px;
+}
+
+.embed-actions {
+  margin-top: 14px;
 }
 
 .site-footer {
