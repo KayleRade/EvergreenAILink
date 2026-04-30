@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Portal | Evergreen AI Link</title>
+    <link rel="icon" href="assets/evergreen-ai-link-logo-clean.png">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/evergreen-ai-link-logo-clean.png" alt="Evergreen AI Link"></a>
+        <div class="nav-links"><a href="client-portal.html">Dashboard</a><a href="services.html">Services</a><a href="ai-system-plan.html">Take Intake</a><a class="button primary" data-booking-link href="https://calendar.app.google/6oECkQT9oewUMVHs8">Schedule Consultation</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Client portal</p>
+          <h1>Your AI business evaluation dashboard.</h1>
+          <p class="lead">View recommendations, ROI estimates, next steps, pricing, and service options after your intake form is processed.</p>
+        </div>
+      </section>
+      <section>
+        <div class="container" data-client-dashboard></div>
+      </section>
+      <section class="band">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">Order services</p><h2>Choose the next step.</h2></div>
+          <div class="grid">
+            <article class="card package-card"><h3>Starter Setup</h3><p class="price">$550</p><p>Website, booking, email, Google setup, hosting, domain, and basic SEO foundation.</p><a class="button primary" data-checkout="starter" href="#">Order and Pay</a></article>
+            <article class="card package-card"><h3>Growth Setup</h3><p class="price">$1,100</p><p>Expanded foundation with stronger service presentation and lead capture.</p><a class="button primary" data-checkout="growth" href="#">Order and Pay</a></article>
+            <article class="card package-card"><h3>AI Agent/Tool</h3><p class="price">$1,500</p><p>AI chat, follow-up, appointment assistant, lead qualifier, FAQ assistant, or workflow automation.</p><a class="button primary" data-checkout="agent" href="#">Order and Pay</a></article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="site.config.js"></script><script src="assets/app.js"></script><script src="assets/portal.js"></script>
+  </body>
+</html>

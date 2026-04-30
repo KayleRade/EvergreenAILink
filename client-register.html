@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register | Evergreen AI Link</title>
+    <link rel="icon" href="assets/evergreen-ai-link-logo-clean.png">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/evergreen-ai-link-logo-clean.png" alt="Evergreen AI Link"></a>
+        <div class="nav-links"><a href="index.html">Home</a><a href="ai-system-plan.html">Free Evaluation</a><a href="client-login.html">Client Login</a><a class="button primary" data-booking-link href="https://calendar.app.google/6oECkQT9oewUMVHs8">Book a Call</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container form-shell">
+          <div>
+            <p class="eyebrow">Free instant evaluation</p>
+            <h1>Create your portal account.</h1>
+            <p class="lead">Use this after completing an AI intake form. n8n can redirect here with the client email and result ID so the dashboard can show their personalized analysis.</p>
+          </div>
+          <form class="card" data-auth-form="register">
+            <label><span>Name</span><input name="name" autocomplete="name" required></label>
+            <label><span>Business Name</span><input name="business_name" autocomplete="organization"></label>
+            <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label><span>Password</span><input type="password" name="password" autocomplete="new-password" required></label>
+            <button type="submit">Create Account</button>
+            <p class="form-status" data-form-status></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="site.config.js"></script><script src="assets/app.js"></script><script src="assets/portal.js"></script>
+  </body>
+</html>

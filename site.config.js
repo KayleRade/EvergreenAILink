@@ -5,6 +5,16 @@ window.EVERGREEN_CONFIG = {
     embedUrl: "https://n8n.srv1218594.hstgr.cloud/form/92cda703-6db6-4c82-a7ca-d7d5d265ca79",
     setupEmbedUrl: "https://n8n.srv1218594.hstgr.cloud/form/ac03bc11-416a-4ac5-a997-d47fdb1471c1"
   },
+  supabase: {
+    url: "",
+    anonKey: ""
+  },
+  stripe: {
+    starterSetupCheckoutUrl: "",
+    growthSetupCheckoutUrl: "",
+    aiAgentCheckoutUrl: "",
+    consultationCheckoutUrl: ""
+  },
   airtable: {
     baseId: "",
     token: "",

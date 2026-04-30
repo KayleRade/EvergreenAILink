@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Login | Evergreen AI Link</title>
+    <link rel="icon" href="assets/evergreen-ai-link-logo-clean.png">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/evergreen-ai-link-logo-clean.png" alt="Evergreen AI Link"></a>
+        <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQ</a><a class="button primary" data-booking-link href="https://calendar.app.google/6oECkQT9oewUMVHs8">Book a Call</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container form-shell">
+          <div>
+            <p class="eyebrow">Client portal</p>
+            <h1>Log in to view your AI evaluation and next steps.</h1>
+            <p class="lead">Once Supabase is connected, clients can securely access intake results, ROI estimates, service recommendations, and orders.</p>
+          </div>
+          <form class="card" data-auth-form="login">
+            <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label><span>Password</span><input type="password" name="password" autocomplete="current-password" required></label>
+            <button type="submit">Log In</button>
+            <a class="text-link" href="client-register.html">Create an account</a>
+            <p class="form-status" data-form-status></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="site.config.js"></script><script src="assets/app.js"></script><script src="assets/portal.js"></script>
+  </body>
+</html>

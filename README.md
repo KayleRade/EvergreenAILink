@@ -13,6 +13,12 @@ Modern static website for Evergreen AI Link, an AI automation agency focused on 
 - `contact.html` - quick contact form for Airtable leads.
 - `ai-system-plan.html` - advanced AI intake form for n8n, with optional embedded n8n form.
 - `ai-ready-business-setup.html` - dedicated AI Ready Business Setup intake form.
+- `client-login.html` - Supabase-ready client login page.
+- `client-register.html` - Supabase-ready client registration page.
+- `client-portal.html` - client dashboard and service ordering portal preview.
+- `admin.html` - admin portal preview for clients, requests, calls, content, and analytics.
+
+For portal backend setup, see `SUPABASE_STRIPE_SETUP.md`.
 
 ## Included Brand Resources
 
